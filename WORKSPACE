@@ -59,4 +59,5 @@ maven_install(
         "https://maven.google.com",
         "https://repo1.maven.org/maven2",
     ],
+    version_conflict_policy = "pinned",
 )
