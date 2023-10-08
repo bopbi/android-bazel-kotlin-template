@@ -11,9 +11,10 @@ android_binary(
 kt_android_library(
     name = "main_app",
     srcs = glob(["java/com/example/hellobazel/*.kt"]),
+    custom_package = "com.example.hellobazel",
     manifest = "AndroidManifest.xml",
     resource_files = glob(["res/**"]),
-    visibility = ["//app:__subpackages__"],
+    visibility = ["//app/src:__subpackages__"],
     deps = [
         artifact("androidx.appcompat:appcompat:1.6.1"),
         artifact("androidx.core:core-ktx:1.12.0"),

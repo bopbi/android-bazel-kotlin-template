@@ -7,9 +7,9 @@ android_sdk_repository(
 )
 
 # BEGIN rules_kotlin
-rules_kotlin_version = "1.9"
+rules_kotlin_version = "1.8.1"
 
-rules_kotlin_sha = "01293740a16e474669aba5b5a1fe3d368de5832442f164e4fbfc566815a8bc3a"
+rules_kotlin_sha = "a630cda9fdb4f56cf2dc20a4bf873765c41cf00e9379e8d59cd07b24730f4fde"
 
 http_archive(
     name = "rules_kotlin",
