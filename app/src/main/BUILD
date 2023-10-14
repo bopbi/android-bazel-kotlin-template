@@ -24,10 +24,11 @@ kt_android_library(
         artifact("androidx.core:core-ktx"),
         artifact("androidx.constraintlayout:constraintlayout"),
         artifact("androidx.lifecycle:lifecycle-runtime"),
-        "main_external_lib"
+        "main_external_lib",
     ],
 )
 
+## Separate Material Design as Demo
 kt_android_library(
     name = "main_external_lib",
     srcs = glob(["java/com/example/hellobazel/*.kt"]),
