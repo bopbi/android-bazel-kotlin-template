@@ -9,21 +9,33 @@ android_binary(
         "minSdkVersion": "24",
         "targetSdkVersion": "34",
     },
-    deps = ["//app/src/main:main_app"],
+    deps = ["//app/src/main:main_lib"],
 )
 
 kt_android_library(
-    name = "main_app",
+    name = "main_lib",
     srcs = glob(["java/com/example/hellobazel/*.kt"]),
     custom_package = "com.example.hellobazel",
     manifest = "AndroidManifest.xml",
     resource_files = glob(["res/**"]),
     visibility = ["//app/src:__subpackages__"],
     deps = [
-        artifact("androidx.appcompat:appcompat:1.6.1"),
-        artifact("androidx.core:core-ktx:1.12.0"),
-        artifact("com.google.android.material:material:1.10.0"),
-        artifact("androidx.constraintlayout:constraintlayout:2.1.4"),
-        artifact("androidx.lifecycle:lifecycle-runtime:2.6.1"),
+        artifact("androidx.appcompat:appcompat"),
+        artifact("androidx.core:core-ktx"),
+        artifact("androidx.constraintlayout:constraintlayout"),
+        artifact("androidx.lifecycle:lifecycle-runtime"),
+        "main_external_lib"
+    ],
+)
+
+kt_android_library(
+    name = "main_external_lib",
+    srcs = glob(["java/com/example/hellobazel/*.kt"]),
+    custom_package = "com.example.hellobazel",
+    manifest = "AndroidManifest.xml",
+    resource_files = glob(["res/**"]),
+    visibility = ["//app/src:__subpackages__"],
+    deps = [
+        artifact("com.google.android.material:material"),
     ],
 )
