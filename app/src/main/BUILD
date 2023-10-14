@@ -5,6 +5,10 @@ android_binary(
     name = "app",
     custom_package = "com.example.hellobazel",
     manifest = "AndroidManifest.xml",
+    manifest_values = {
+        "minSdkVersion": "24",
+        "targetSdkVersion": "34",
+    },
     deps = ["//app/src/main:main_app"],
 )
 
